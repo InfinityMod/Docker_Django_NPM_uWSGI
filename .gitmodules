@@ -1,0 +1,3 @@
+[submodule ".docker_toolbox"]
+	path = .docker_toolbox
+	url = https://github.com/InfinityMod/Docker_Toolbox
