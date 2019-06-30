@@ -7,4 +7,4 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
-bash $DIR/scripts/docker_start.sh -p 8000:8000 -p 4200:4200 -p 80:80
+bash $DIR/scripts/docker_start.sh -p 8020:80 -p 8021:8000 -p 8022:4200 --entrypoint "/home/docker/code/startup.sh"

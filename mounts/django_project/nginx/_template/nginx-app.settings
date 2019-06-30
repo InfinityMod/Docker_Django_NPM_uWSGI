@@ -1,0 +1,31 @@
+export conf_upstreams=`cat <<EOF
+upstream django {
+    server unix:/home/docker/code/nginx/app.sock; # for a file socket
+}
+EOF`
+
+export conf_geo_ip=`cat <<EOF
+geo \\$admin {
+  default 0;
+}
+EOF`
+
+#export conf_django_suburl=""
+export conf_django_upstream="unix:/home/docker/code/nginx/app.sock"
+export conf_django_uwsgi="/home/docker/code/nginx/uwsgi_params"
+
+export conf_port=80
+
+export conf_server_name="127.0.0.1"
+
+export conf_media_alias="/home/docker/code/app/prod/media"
+export conf_static_alias="/home/docker/code/app/prod/static"
+
+export conf_root_alias="/home/docker/code"
+
+export conf_statics_develop_rgx="([^\/]*)\/(.*)"
+export conf_statics_appendix="/\$1/\$2"
+
+export conf_statics_develop="$_conf_statics_develop"
+
+export conf_static_favicon_folder="/home/docker/code/app/prod/static"

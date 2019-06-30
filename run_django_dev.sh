@@ -7,4 +7,11 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
-bash $DIR/scripts/docker_exec.sh "/usr/bin/python3 /home/docker/code/app/manage.py runserver 0.0.0.0:8000"
+
+. "$DIR/scripts/_init.sh"
+
+if testcmd konsole; then
+    exec konsole --noclose -e  "bash \"$DIR/scripts/docker_exec.sh\" \"/bin/bash /home/docker/code/dev.sh\""
+else
+    bash $DIR/scripts/docker_exec.sh "/bin/bash /home/docker/code/dev.sh"
+fi
