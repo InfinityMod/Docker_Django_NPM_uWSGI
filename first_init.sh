@@ -29,3 +29,11 @@ ln -s  "$DIR/images" "$DIR/.docker_toolbox/images"
 echo "Load image"
 "$DIR/scripts/docker_load_image.sh" "$DIR/images/$IMG.tar"
 rm "$DIR/images/$IMG.tar" 
+echo "Finished!"
+
+while true
+do
+    echo "Press [CTRL+C] to stop.."
+    sleep 1
+done
+
