@@ -17,8 +17,11 @@ Run first init:<br>
 Start container:<br>
 `./run_server.sh`
 
-Start django in container:<br>
-`./run_django.sh`
+Start django development runtime in container (optional):<br>
+`./run_django_dev.sh`
 
-Navigate in your browser to:<br>
-`http://localhost:8000`
+Navigate in your browser to production view:<br>
+`http://127.0.0.1:8020`
+
+Navigate in your browser to development view:<br>
+`http://localhost:8021`
